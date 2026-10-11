@@ -1,267 +1,321 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BStream v3.00 | La Evolución del Streaming Inteligente — APK Oficial</title>
+    <title>BStream v3.00 Studio Pro | Ecosistema de Streaming y Descarga APK</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 
     <style>
         :root {
-            --bg-base: #030712;
-            --bg-surface: #0b0f19;
-            --bg-card: #111827;
-            --primary: #06b6d4;
-            --primary-glow: rgba(6, 182, 212, 0.25);
-            --accent: #3b82f6;
-            --success: #10b981;
-            --warning: #f59e0b;
+            --bg-base: #010409;
+            --bg-surface: #060913;
+            --bg-card: #0d1322;
             
-            --gradient-primary: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-            --gradient-surface: linear-gradient(180deg, rgba(17, 24, 39, 0.7) 0%, rgba(11, 15, 25, 0.9) 100%);
+            --primary: #00f2fe;
+            --primary-glow: rgba(0, 242, 254, 0.35);
+            --accent: #4facfe;
+            --success: #00e676;
+            --warning: #ffb300;
+            
+            --gradient-main: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
             --border-glass: rgba(255, 255, 255, 0.08);
-            --border-focus: rgba(6, 182, 212, 0.4);
+            --border-focus: rgba(0, 242, 254, 0.5);
             
             --font-main: 'Plus Jakarta Sans', sans-serif;
         }
 
-        *, *::before, *::after {
-            margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); -webkit-font-smoothing: antialiased;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); -webkit-font-smoothing: antialiased; }
 
-        body { background-color: var(--bg-base); color: #f3f4f6; overflow-x: hidden; line-height: 1.6; padding-bottom: 70px; }
+        body { background-color: var(--bg-base); color: #f1f5f9; overflow-x: hidden; line-height: 1.75; padding-bottom: 90px; }
 
-        h1 { font-size: clamp(2.2rem, 5vw + 1rem, 4rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; }
-        h2 { font-size: clamp(1.7rem, 3vw + 0.8rem, 2.6rem); font-weight: 800; letter-spacing: -0.03em; }
-        h3 { font-size: clamp(1.2rem, 2vw + 0.5rem, 1.8rem); font-weight: 700; }
-        p  { font-size: clamp(0.95rem, 0.5vw + 0.75rem, 1.1rem); color: #9ca3af; }
+        h1 { font-size: clamp(2.5rem, 5vw + 1rem, 4.2rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; }
+        h2 { font-size: clamp(1.8rem, 3vw + 0.8rem, 2.8rem); font-weight: 800; letter-spacing: -0.03em; }
+        h3 { font-size: clamp(1.2rem, 1.5vw + 0.5rem, 1.6rem); font-weight: 700; }
+        p  { font-size: clamp(0.95rem, 0.4vw + 0.75rem, 1.08rem); color: #94a3b8; }
         
-        .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 50px); }
+        .container { width: 100%; max-width: 1320px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 40px); }
 
-        .scroll-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .scroll-reveal { opacity: 0; transform: translateY(35px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .scroll-reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* HEADER */
+        /* --- HEADER FLOTANTE PRO --- */
         header {
             position: fixed; top: 0; left: 0; width: 100%; padding: 16px 0;
-            background: rgba(3, 7, 18, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            background: rgba(1, 4, 9, 0.82); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
             border-bottom: 1px solid var(--border-glass); z-index: 1000;
         }
         .header-flex { display: flex; justify-content: space-between; align-items: center; }
-        .brand-logo { display: flex; align-items: center; gap: 10px; font-size: 1.4rem; font-weight: 800; text-decoration: none; color: #ffffff; letter-spacing: -0.02em; }
-        .brand-logo .logo-badge { background: var(--gradient-primary); width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #fff; }
+        .brand-logo { display: flex; align-items: center; gap: 12px; font-size: 1.5rem; font-weight: 900; text-decoration: none; color: #fff; letter-spacing: -0.03em; }
+        .brand-logo .logo-icon { background: var(--gradient-main); width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #010409; box-shadow: 0 0 25px var(--primary-glow); }
         
-        .nav-actions { display: flex; align-items: center; gap: 15px; }
-        .nav-btn-shortcut {
-            background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-glass); color: white;
-            padding: 10px 20px; border-radius: 12px; font-size: 0.9rem; font-weight: 600; text-decoration: none;
-            display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; cursor: pointer;
+        .btn-nav-dl {
+            background: var(--gradient-main); color: #010409; padding: 11px 24px; border-radius: 12px; font-weight: 800; font-size: 0.9rem; border: none; cursor: pointer;
+            display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px var(--primary-glow); transition: transform 0.2s, box-shadow 0.2s; text-decoration: none;
         }
-        .nav-btn-shortcut:hover { background: var(--primary); color: var(--bg-base); border-color: var(--primary); }
+        .btn-nav-dl:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--primary-glow); }
 
-        /* MODAL EDAD +18 */
+        /* --- MODAL DE CONTROL DE ACCESO --- */
         .age-modal-overlay {
-            position: fixed; inset: 0; background: rgba(3, 7, 18, 0.96); backdrop-filter: blur(20px);
+            position: fixed; inset: 0; background: rgba(1, 4, 9, 0.96); backdrop-filter: blur(25px);
             display: flex; align-items: center; justify-content: center; z-index: 10000; transition: opacity 0.4s ease;
         }
         .age-modal-card {
-            background: var(--bg-card); border: 1px solid rgba(245, 158, 11, 0.4);
-            width: 90%; max-width: 480px; border-radius: 24px; padding: 40px; text-align: center;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.9);
+            background: var(--bg-card); border: 1px solid var(--border-focus);
+            width: 90%; max-width: 520px; border-radius: 28px; padding: 45px; text-align: center;
+            box-shadow: 0 50px 120px rgba(0,0,0,0.95);
         }
-        .age-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(245, 158, 11, 0.15); color: var(--warning); padding: 6px 16px; border-radius: 30px; font-weight: 800; font-size: 0.9rem; margin-bottom: 20px; border: 1px solid rgba(245, 158, 11, 0.3); }
-        .age-modal-card h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 12px; }
-        .age-modal-card p { font-size: 0.92rem; color: #9ca3af; margin-bottom: 30px; line-height: 1.6; }
-        .age-btn-group { display: flex; gap: 12px; justify-content: center; }
-        .btn-age-accept { background: var(--gradient-primary); color: #030712; font-weight: 700; padding: 14px 24px; border-radius: 12px; border: none; cursor: pointer; flex: 1; font-size: 0.95rem; }
-        .btn-age-exit { background: rgba(255,255,255,0.05); color: #9ca3af; font-weight: 600; padding: 14px 20px; border-radius: 12px; border: 1px solid var(--border-glass); cursor: pointer; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; justify-content: center; }
+        .age-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 242, 254, 0.1); color: var(--primary); padding: 6px 18px; border-radius: 30px; font-weight: 800; font-size: 0.85rem; margin-bottom: 22px; border: 1px solid rgba(0, 242, 254, 0.3); }
+        .age-modal-card h2 { font-size: 1.7rem; font-weight: 800; margin-bottom: 14px; }
+        .age-modal-card p { font-size: 0.94rem; color: #94a3b8; margin-bottom: 30px; line-height: 1.7; }
+        .age-btn-group { display: flex; gap: 12px; }
+        .btn-age-accept { background: var(--gradient-main); color: #010409; font-weight: 800; padding: 15px 24px; border-radius: 14px; border: none; cursor: pointer; flex: 1; font-size: 0.95rem; box-shadow: 0 8px 25px var(--primary-glow); }
+        .btn-age-exit { background: rgba(255,255,255,0.04); color: #94a3b8; font-weight: 600; padding: 15px 20px; border-radius: 14px; border: 1px solid var(--border-glass); cursor: pointer; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; transition: color 0.2s; }
 
-        /* HERO */
+        /* --- HERO SECCIÓN CON FONDO DINÁMICO (TRÁILER / PÓSTER) --- */
         .hero-section {
-            position: relative; padding: clamp(140px, 16vw, 190px) 0 clamp(60px, 8vw, 100px);
-            background: radial-gradient(circle at 80% 10%, rgba(6, 182, 212, 0.12) 0%, transparent 50%),
-                        radial-gradient(circle at 10% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
+            position: relative;
+            min-height: 90vh;
+            padding: clamp(150px, 16vw, 200px) 0 clamp(80px, 8vw, 120px);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background-color: var(--bg-base);
         }
-        .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center; }
+
+        /* CONTENEDORES PARA EL MEDIA DE FONDO */
+        .hero-bg-media {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        /* IFRAME Y VIDEO AJUSTADO PARA CUBRIR TODO EL HERO */
+        .hero-bg-media iframe, .hero-bg-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw; /* Ratio 16:9 */
+            min-height: 100vh;
+            min-width: 177.77vh;
+            transform: translate(-50%, -50%) scale(1.2);
+            object-fit: cover;
+            border: none;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .hero-bg-image {
+            background-size: cover;
+            background-position: center;
+            animation: kenBurns 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes kenBurns {
+            0% { transform: translate(-50%, -50%) scale(1.05); }
+            100% { transform: translate(-50%, -50%) scale(1.2); }
+        }
+
+        /* DEGRADADOS CINEMÁTICOS (SUPERIOR E INFERIOR) Y OSCURECIMIENTO DE CONTRASTE */
+        .hero-gradient-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            background: 
+                /* Degradado Superior para oscurecer la zona del Header */
+                linear-gradient(180deg, rgba(1, 4, 9, 0.95) 0%, rgba(1, 4, 9, 0.6) 25%, transparent 50%),
+                /* Degradado Inferior para fundir suavemente con el resto de la página */
+                linear-gradient(0deg, var(--bg-base) 0%, rgba(1, 4, 9, 0.8) 20%, transparent 60%),
+                /* Sombra lateral para dar legibilidad al texto principal */
+                radial-gradient(circle at 30% 50%, rgba(1, 4, 9, 0.85) 0%, rgba(1, 4, 9, 0.4) 60%);
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 3;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
         @media(max-width: 968px) { .hero-grid { grid-template-columns: 1fr; text-align: center; } }
 
         .trust-pill {
-            display: inline-flex; align-items: center; gap: 8px; background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.25); color: #34d399; padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; margin-bottom: 24px;
+            display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 230, 118, 0.15);
+            border: 1px solid rgba(0, 230, 118, 0.4); color: var(--success); padding: 6px 18px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; margin-bottom: 24px; backdrop-filter: blur(8px);
         }
-        .hero-content h1 span { background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-content p { margin: 20px 0 32px; max-width: 540px; }
-        @media(max-width: 968px) { .hero-content p { margin: 20px auto 32px; } }
+        .hero-content h1 span { background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-content p { margin: 20px 0 36px; max-width: 580px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+        @media(max-width: 968px) { .hero-content p { margin: 20px auto 36px; } }
 
-        .hero-cta-group { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-        @media(max-width: 968px) { .hero-cta-group { justify-content: center; } }
+        .hero-btn-group { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+        @media(max-width: 968px) { .hero-btn-group { justify-content: center; } }
 
         .btn-download-master {
-            display: inline-flex; align-items: center; gap: 14px; background: var(--gradient-primary); color: #030712; text-decoration: none;
-            padding: 16px 32px; border-radius: 14px; font-weight: 700; font-size: 1.05rem; box-shadow: 0 10px 30px var(--primary-glow); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: none; cursor: pointer;
+            display: inline-flex; align-items: center; gap: 14px; background: var(--gradient-main); color: #010409; text-decoration: none;
+            padding: 18px 36px; border-radius: 16px; font-weight: 900; font-size: 1.05rem; box-shadow: 0 12px 35px var(--primary-glow); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: none; cursor: pointer;
         }
-        .btn-download-master:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(6, 182, 212, 0.4); }
+        .btn-download-master:hover { transform: translateY(-3px); box-shadow: 0 18px 45px rgba(0, 242, 254, 0.5); }
 
         .btn-secondary-link {
-            display: inline-flex; align-items: center; gap: 8px; color: #f3f4f6; text-decoration: none; font-weight: 600; padding: 16px 20px; font-size: 1rem; transition: color 0.3s;
+            display: inline-flex; align-items: center; gap: 8px; color: #f1f5f9; text-decoration: none; font-weight: 700; padding: 16px 20px; font-size: 1rem; transition: color 0.3s;
         }
         .btn-secondary-link:hover { color: var(--primary); }
 
-        /* LIVE PREVIEW HERO */
-        .hero-preview-container { position: relative; }
-        .hero-glass-card {
-            background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 24px; padding: 24px; box-shadow: 0 40px 100px rgba(0,0,0,0.8); position: relative; overflow: hidden;
+        /* CARRUSEL SECUNDARIO MÓVIL EN HERO */
+        .hero-preview-box {
+            background: rgba(13, 19, 34, 0.75); backdrop-filter: blur(20px); border: 1px solid var(--border-glass); border-radius: 28px; padding: 24px;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.85); position: relative; overflow: hidden;
         }
-        .hero-glass-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--gradient-primary); }
-
-        .preview-carousel-viewport { width: 100%; height: 320px; border-radius: 14px; overflow: hidden; position: relative; background: #000; }
-        .carousel-slide {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 0.8s ease; display: flex; align-items: flex-end; padding: 20px;
+        .hero-preview-box::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--gradient-main); }
+        .preview-viewport { width: 100%; height: 320px; border-radius: 16px; overflow: hidden; position: relative; background: #000; }
+        .hero-slide {
+            position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 0.8s ease; display: flex; align-items: flex-end; padding: 24px;
         }
-        .carousel-slide.active { opacity: 1; }
-        .carousel-slide::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(11, 15, 25, 0.95) 100%); }
-        .carousel-meta { position: relative; z-index: 2; text-align: left; }
-        .carousel-meta span { font-size: 0.75rem; color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-        .carousel-meta h4 { font-size: 1.1rem; font-weight: 700; margin-top: 4px; }
+        .hero-slide.active { opacity: 1; }
+        .hero-slide::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(13, 19, 34, 0.95) 100%); }
+        .slide-info { position: relative; z-index: 2; text-align: left; }
+        .slide-info span { font-size: 0.75rem; color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; }
+        .slide-info h4 { font-size: 1.25rem; font-weight: 800; margin-top: 4px; color: #fff; }
 
-        /* ESTADÍSTICAS */
-        .stats-bar-section { padding: 40px 0; border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass); background: var(--bg-surface); }
+        /* --- BARRA DE ESTADÍSTICAS --- */
+        .stats-section { padding: 45px 0; border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass); background: var(--bg-surface); position: relative; z-index: 5; }
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
-        .stat-item h3 { font-size: 2rem; font-weight: 800; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .stat-item p { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; color: #6b7280; }
+        .stat-item h3 { font-size: 2.3rem; font-weight: 900; background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .stat-item p { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-top: 4px; color: #64748b; }
 
-        .section-padding { padding: clamp(70px, 10vw, 120px) 0; }
-        .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
-        .section-header p { margin-top: 15px; }
+        .section-padding { padding: clamp(80px, 10vw, 130px) 0; }
+        .section-header { text-align: center; max-width: 800px; margin: 0 auto 65px; }
+        .section-header p { margin-top: 16px; }
 
-        /* FUNCIONES CON SERVIDORES TRANSPARENTES */
-        .features-detailed-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .feature-box {
-            background: var(--bg-card); border: 1px solid var(--border-glass); padding: 35px; border-radius: 24px; position: relative; overflow: hidden; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        /* --- CARACTERÍSTICAS Y SERVIDORES --- */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .feature-card {
+            background: var(--bg-card); border: 1px solid var(--border-glass); padding: 40px; border-radius: 28px; position: relative; overflow: hidden; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .feature-box:hover { border-color: var(--border-focus); transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-        .feature-icon-wrapper { width: 60px; height: 60px; border-radius: 16px; background: rgba(6, 182, 212, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 24px; }
-        .feature-box h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
-        .feature-box p { font-size: 0.92rem; line-height: 1.7; color: #9ca3af; margin-bottom: 16px; }
-        .server-badge {
-            display: inline-flex; align-items: center; gap: 6px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.25); color: #60a5fa; padding: 6px 12px; border-radius: 8px; font-size: 0.78rem; font-weight: 700; margin-bottom: 16px;
-        }
-        .feature-tag-list { list-style: none; display: flex; flex-wrap: gap; gap: 8px; }
-        .feature-tag-list li { background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; color: #cbd5e1; }
-        .badge-beta-pro { background: rgba(245, 158, 11, 0.15); color: var(--warning); border: 1px solid rgba(245, 158, 11, 0.3); font-size: 0.7rem; padding: 2px 8px; border-radius: 6px; font-weight: 800; text-transform: uppercase; }
+        .feature-card:hover { border-color: var(--border-focus); transform: translateY(-6px); box-shadow: 0 25px 50px rgba(0,0,0,0.6); }
+        .feat-icon { width: 64px; height: 64px; border-radius: 18px; background: rgba(0, 242, 254, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 30px; margin-bottom: 26px; }
+        .feature-card h3 { font-size: 1.35rem; font-weight: 800; margin-bottom: 12px; }
+        .feature-card p { font-size: 0.95rem; line-height: 1.75; color: #94a3b8; margin-bottom: 20px; }
+        
+        .server-tag-box { display: inline-flex; align-items: center; gap: 6px; background: rgba(79, 172, 254, 0.1); border: 1px solid rgba(79, 172, 254, 0.25); color: #60a5fa; padding: 6px 14px; border-radius: 10px; font-size: 0.8rem; font-weight: 700; margin-bottom: 18px; }
+        .badge-beta { background: rgba(255, 179, 0, 0.15); color: var(--warning); border: 1px solid rgba(255, 179, 0, 0.3); font-size: 0.72rem; padding: 2px 8px; border-radius: 6px; font-weight: 800; text-transform: uppercase; }
 
-        /* APARTADO DE NOTICIAS / ACTORES (TMDB API) */
-        .news-actors-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
-        .actor-card {
-            background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 16px; overflow: hidden; transition: 0.3s; text-align: center; padding-bottom: 16px;
+        /* --- GRILLA DE ACTORES ESTRICTA (2, 3, 4, 5 COLUMNAS) --- */
+        .actors-responsive-grid {
+            display: grid; gap: 22px;
+            grid-template-columns: repeat(2, 1fr);
         }
-        .actor-card:hover { border-color: var(--border-focus); transform: translateY(-4px); }
-        .actor-img { width: 100%; height: 260px; background-size: cover; background-position: center; margin-bottom: 14px; }
-        .actor-card h4 { font-size: 1.05rem; font-weight: 700; padding: 0 12px; margin-bottom: 4px; color: #fff; }
-        .actor-card p { font-size: 0.8rem; color: var(--primary); padding: 0 12px; }
+        @media (min-width: 560px) { .actors-responsive-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 880px) { .actors-responsive-grid { grid-template-columns: repeat(4, 1fr); } }
+        @media (min-width: 1150px) { .actors-responsive-grid { grid-template-columns: repeat(5, 1fr); } }
 
-        /* SANDBOX TECH BLOCK */
-        .sandbox-box { background: var(--bg-card); border: 1px solid var(--border-focus); border-radius: 24px; padding: 40px; margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        @media(max-width: 968px) { .sandbox-box { grid-template-columns: 1fr; } }
-        .sandbox-box h3 { margin-bottom: 15px; }
-
-        /* TIMELINE / GUÍA */
-        .timeline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-        .timeline-card {
-            background: var(--gradient-surface); border: 1px solid var(--border-glass); padding: 35px 30px; border-radius: 20px; position: relative; transition: border-color 0.3s;
+        .actor-pro-card {
+            background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 20px; overflow: hidden;
+            text-align: center; padding-bottom: 18px; transition: transform 0.3s, border-color 0.3s;
         }
-        .timeline-card:hover { border-color: var(--border-focus); }
-        .timeline-num { font-size: 3rem; font-weight: 900; color: rgba(255,255,255,0.03); position: absolute; top: 20px; right: 25px; }
-        .timeline-icon { width: 50px; height: 50px; border-radius: 12px; background: rgba(6, 182, 212, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px; }
-        .timeline-card h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+        .actor-pro-card:hover { transform: translateY(-6px); border-color: var(--border-focus); }
+        .actor-photo { width: 100%; padding-top: 130%; background-size: cover; background-position: center; position: relative; margin-bottom: 14px; }
+        .actor-name { font-size: 0.98rem; font-weight: 800; color: #fff; padding: 0 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .actor-known { font-size: 0.78rem; color: var(--primary); padding: 0 10px; margin-top: 2px; }
 
-        /* GALERÍA */
-        .preview-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
-        .media-preview-card {
-            background: var(--bg-card); border-radius: 16px; overflow: hidden; border: 1px solid var(--border-glass); transition: transform 0.3s, border-color 0.3s;
+        /* --- SANDBOX & SEGURIDAD --- */
+        .sandbox-showcase { background: var(--bg-card); border: 1px solid var(--border-focus); border-radius: 32px; padding: 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; box-shadow: 0 40px 90px rgba(0,0,0,0.7); }
+        @media(max-width: 968px) { .sandbox-showcase { grid-template-columns: 1fr; padding: 30px; } }
+
+        /* --- GUÍA DE INSTALACIÓN --- */
+        .timeline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+        .timeline-box {
+            background: var(--bg-card); border: 1px solid var(--border-glass); padding: 40px 32px; border-radius: 28px; position: relative; transition: border-color 0.3s;
         }
-        .media-preview-card:hover { transform: translateY(-6px); border-color: var(--border-focus); }
+        .timeline-box:hover { border-color: var(--border-focus); }
+        .step-number { font-size: 3.5rem; font-weight: 900; color: rgba(255,255,255,0.03); position: absolute; top: 15px; right: 25px; }
+        .step-icon { width: 56px; height: 56px; border-radius: 16px; background: rgba(0, 242, 254, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 22px; }
+        .timeline-box h4 { font-size: 1.25rem; font-weight: 800; margin-bottom: 10px; }
+
+        /* --- GALERÍA TMDB --- */
+        .preview-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 26px; }
+        .media-preview-card { background: var(--bg-card); border-radius: 20px; overflow: hidden; border: 1px solid var(--border-glass); transition: 0.3s; }
+        .media-preview-card:hover { transform: translateY(-5px); border-color: var(--border-focus); }
         .media-thumb { position: relative; width: 100%; padding-top: 56.25%; background-size: cover; background-position: center; }
-        .media-tag { position: absolute; bottom: 12px; left: 12px; background: rgba(3, 7, 18, 0.8); backdrop-filter: blur(4px); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; color: var(--primary); }
-        .media-info { padding: 20px; }
-        .media-info h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .media-info p { font-size: 0.88rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .media-tag { position: absolute; bottom: 12px; left: 12px; background: rgba(1, 4, 9, 0.85); backdrop-filter: blur(4px); padding: 5px 12px; border-radius: 8px; font-size: 0.78rem; font-weight: 700; color: var(--primary); }
+        .media-info { padding: 22px; }
+        .media-info h4 { font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .media-info p { font-size: 0.9rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
-        /* COMUNIDAD */
-        .community-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
-        .community-card {
-            background: var(--bg-card); border: 1px solid var(--border-glass); padding: 28px; border-radius: 20px;
-            text-decoration: none; color: white; display: flex; align-items: center; gap: 20px; flex: 1; min-width: 280px; max-width: 400px; transition: all 0.3s;
+        /* --- LEGALES, COPYRIGHT Y PUBLICIDAD --- */
+        .legal-container { background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 28px; padding: 45px; }
+        .legal-container h3 { color: var(--primary); margin: 26px 0 12px; font-size: 1.25rem; }
+        .legal-container h3:first-child { margin-top: 0; }
+        .legal-container p { font-size: 0.95rem; text-align: justify; margin-bottom: 14px; color: #94a3b8; }
+
+        /* --- COMUNIDAD --- */
+        .community-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+        .comm-link-card {
+            background: var(--bg-card); border: 1px solid var(--border-glass); padding: 32px; border-radius: 24px;
+            text-decoration: none; color: white; display: flex; align-items: center; gap: 22px; flex: 1; min-width: 290px; max-width: 420px; transition: all 0.3s;
         }
-        .community-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.2); }
-        .comm-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
-        .comm-icon.tg { background: rgba(34, 158, 217, 0.12); color: #229ed9; }
-        .comm-icon.tk { background: rgba(255, 255, 255, 0.06); color: #ffffff; }
+        .comm-link-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.25); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .comm-logo { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 30px; }
+        .comm-logo.tg { background: rgba(34, 158, 217, 0.12); color: #229ed9; }
+        .comm-logo.tk { background: rgba(255, 255, 255, 0.06); color: #ffffff; }
 
-        /* LEGALES Y PRIVACIDAD */
-        .legal-box { background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 20px; padding: 40px; margin-top: 40px; }
-        .legal-box h3 { color: var(--primary); margin-bottom: 16px; font-size: 1.25rem; }
-        .legal-box p { margin-bottom: 14px; font-size: 0.92rem; text-align: justify; }
+        /* --- FAQ ACORDEÓN --- */
+        .faq-wrapper { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+        .faq-item { background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 20px; overflow: hidden; transition: 0.3s; }
+        .faq-question-btn { width: 100%; padding: 24px 26px; background: transparent; border: none; text-align: left; color: white; font-size: 1.1rem; font-weight: 800; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .faq-chevron { font-size: 1.4rem; color: #64748b; transition: transform 0.3s; }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+        .faq-content p { padding: 0 26px 26px 26px; font-size: 0.98rem; color: #94a3b8; }
+        .faq-item.open { border-color: var(--border-focus); }
+        .faq-item.open .faq-chevron { transform: rotate(180deg); color: var(--primary); }
 
-        /* FAQ */
-        .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
-        .faq-card { background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 16px; overflow: hidden; transition: 0.3s; }
-        .faq-question { width: 100%; padding: 22px 24px; background: transparent; border: none; text-align: left; color: white; font-size: 1.05rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .faq-arrow { font-size: 1.3rem; color: #6b7280; transition: transform 0.3s; }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
-        .faq-answer p { padding: 0 24px 24px 24px; font-size: 0.95rem; }
-        .faq-card.open { border-color: var(--border-focus); }
-        .faq-card.open .faq-arrow { transform: rotate(180deg); color: var(--primary); }
-
-        /* MODAL */
+        /* --- MODAL DE DESCARGA CON PROGRESO --- */
         .download-modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(3, 7, 18, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-            display: flex; align-items: center; justify-content: center; z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+            position: fixed; inset: 0; background: rgba(1, 4, 9, 0.9); backdrop-filter: blur(20px);
+            display: flex; align-items: center; justify-content: center; z-index: 10000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
         }
         .download-modal-overlay.active { opacity: 1; pointer-events: auto; }
         .download-modal-card {
-            background: var(--bg-card); border: 1px solid var(--border-focus); width: 90%; max-width: 440px; border-radius: 24px; padding: 36px; text-align: center; box-shadow: 0 30px 80px rgba(0,0,0,0.9); transform: scale(0.92); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: var(--bg-card); border: 1px solid var(--border-focus); width: 90%; max-width: 450px; border-radius: 28px; padding: 40px; text-align: center; box-shadow: 0 40px 90px rgba(0,0,0,0.9);
         }
-        .download-modal-overlay.active .download-modal-card { transform: scale(1); }
-        .dl-spinner { width: 54px; height: 54px; border: 4px solid rgba(255,255,255,0.08); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 24px; }
+        .dl-spinner { width: 56px; height: 56px; border: 4px solid rgba(255,255,255,0.08); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 24px; }
         @keyframes spin { to { transform: rotate(360deg); } }
-        .dl-modal-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; }
-        .dl-modal-desc { font-size: 0.9rem; color: #9ca3af; margin-bottom: 24px; }
-        .dl-progress-bar { width: 100%; height: 6px; background: rgba(255,255,255,0.06); border-radius: 10px; overflow: hidden; }
-        .dl-progress-fill { width: 0%; height: 100%; background: var(--gradient-primary); transition: width 0.4s ease; }
+        .dl-progress-bar { width: 100%; height: 7px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: hidden; margin-top: 20px; }
+        .dl-progress-fill { width: 0%; height: 100%; background: var(--gradient-main); transition: width 0.4s ease; }
 
-        /* STICKY MÓVIL */
+        /* --- STICKY MÓVIL --- */
         .sticky-mobile-bar {
-            position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(3, 7, 18, 0.9); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-top: 1px solid var(--border-glass); padding: 12px 20px; display: none; justify-content: center; z-index: 999;
+            position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(1, 4, 9, 0.92); backdrop-filter: blur(20px); border-top: 1px solid var(--border-glass); padding: 14px 20px; display: none; justify-content: center; z-index: 999;
         }
-        .btn-sticky-download {
-            width: 100%; max-width: 400px; background: var(--gradient-primary); color: #030712; font-weight: 700; text-align: center; padding: 14px; border-radius: 12px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.95rem; box-shadow: 0 4px 20px var(--primary-glow);
-        }
+        .btn-sticky-dl { width: 100%; max-width: 420px; background: var(--gradient-main); color: #010409; font-weight: 900; padding: 15px; border-radius: 14px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 1rem; box-shadow: 0 6px 25px var(--primary-glow); }
         @media(max-width: 768px) { .sticky-mobile-bar { display: flex; } }
 
-        footer { padding: 50px 0; border-top: 1px solid var(--border-glass); text-align: center; font-size: 0.85rem; color: #6b7280; }
-        .skeleton-load { animation: pulse-animation 1.5s infinite alternate; }
-        @keyframes pulse-animation { 0% { background-color: #0b0f19; } 100% { background-color: #1a233a; } }
+        footer { padding: 60px 0; border-top: 1px solid var(--border-glass); text-align: center; font-size: 0.88rem; color: #64748b; background: #010409; position: relative; z-index: 5; }
+        .skeleton-load { animation: skeleton-pulse 1.4s infinite alternate; }
+        @keyframes skeleton-pulse { 0% { background-color: #0d1322; } 100% { background-color: #1a233a; } }
     </style>
 </head>
 <body>
 
-    <!-- MODAL DE VERIFICACIÓN DE EDAD (+18) AL ENTRAR -->
+    <!-- MODAL DE CONTROL DE ACCESO -->
     <div class="age-modal-overlay" id="ageModalOverlay">
         <div class="age-modal-card">
             <div class="age-badge">
-                <span class="iconify" data-icon="material-symbols:warning-rounded"></span>
-                Control de Acceso +18
+                <span class="iconify" data-icon="material-symbols:verified-user-rounded"></span>
+                Aviso de Control de Acceso
             </div>
-            <h2>Advertencia de Contenido Sensible</h2>
-            <p>Este sitio web y la aplicación oficial <strong>BStream v3.00</strong> contienen secciones interactivas destinadas estrictamente a un <strong>público mayor de 18 años</strong> (incluyendo nuestro nuevo feed vertical experimental <em>TikTok para Adultos Beta</em>). ¿Confirmas que eres mayor de edad?</p>
+            <h2>Confirmación de Mayoría de Edad</h2>
+            <p>Estás accediendo a la plataforma oficial informativa de <strong>BStream v3.00</strong>. Este sitio web es 100% seguro y apto para todo público. Sin embargo, la aplicación APK contiene módulos avanzados y secciones de entretenimiento adulto (+18). Por favor, confirma si eres mayor de edad:</p>
             <div class="age-btn-group">
                 <button class="btn-age-accept" id="acceptAgeBtn">Sí, soy mayor de 18 años</button>
                 <a href="https://www.google.com" class="btn-age-exit">No, salir</a>
@@ -269,35 +323,43 @@
         </div>
     </div>
 
+    <!-- HEADER -->
     <header>
         <div class="container header-flex">
             <a href="#" class="brand-logo">
-                <div class="logo-badge"><span class="iconify" data-icon="material-symbols:play-arrow-rounded"></span></div>
-                BStream
+                <div class="logo-icon"><span class="iconify" data-icon="material-symbols:play-arrow-rounded"></span></div>
+                BStream <span style="font-size:0.75rem; color:var(--primary); background:rgba(0,242,254,0.1); padding:2px 8px; border-radius:6px; border:1px solid rgba(0,242,254,0.3);">v3.00</span>
             </a>
             <div class="nav-actions">
-                <button class="nav-btn-shortcut trigger-download-flow">
+                <button class="btn-nav-dl trigger-download-flow">
                     <span class="iconify" data-icon="material-symbols:download-rounded"></span>
-                    Descargar v3.00
+                    Descargar APK
                 </button>
             </div>
         </div>
     </header>
 
+    <!-- HERO CON FONDO DINÁMICO (TRÁILER ALEATORIO MUTEADO O PÓSTER) -->
     <section class="hero-section">
+        <!-- CAPA DE FONDO MULTIMEDIA -->
+        <div class="hero-bg-media" id="heroBgMedia"></div>
+        
+        <!-- OVERLAY DE DEGRADADOS ARRIBA Y ABAJO -->
+        <div class="hero-gradient-overlay"></div>
+
         <div class="container hero-grid">
             <div class="hero-content scroll-reveal">
                 <div class="trust-pill">
                     <span class="iconify" data-icon="material-symbols:verified-rounded"></span>
-                    Compilación Verificada y Estable v3.00
+                    Versión Estable Oficial v3.00 — Optimizada para Android
                 </div>
-                <h1>El Ecosistema Definitivo de <span>Streaming Libre</span></h1>
-                <p>Disfruta de películas de estreno mundial, transmisiones en alta definición, series completas, chat en vivo y nuestro feed interactivo especializado. Conectado a los servidores más veloces de internet y equipado con nuestra tecnología de aislamiento Sandbox.</p>
+                <h1>La Evolución del <span>Streaming Inteligente</span> y Descarga APK</h1>
+                <p>Descarga la aplicación móvil definitiva. Disfruta de películas en estreno, series completas por temporadas, chat comunitario en tiempo real y nuestro núcleo de seguridad Sandbox antibublicidad integrado.</p>
                 
-                <div class="hero-cta-group">
+                <div class="hero-btn-group">
                     <button class="btn-download-master trigger-download-flow">
                         <span class="iconify" data-icon="material-symbols:install-mobile-rounded" style="font-size: 24px;"></span>
-                        Descargar APK Oficial
+                        Descargar Paquete APK (v3.00)
                     </button>
                     <a href="#guide" class="btn-secondary-link">
                         Ver guía de instalación
@@ -306,25 +368,27 @@
                 </div>
             </div>
 
-            <div class="hero-preview-container scroll-reveal">
-                <div class="hero-glass-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                        <span style="font-size: 0.85rem; font-weight: 700; color: #9ca3af;">BStream Live Core</span>
-                        <span style="display:inline-flex; align-items:center; gap:6px; font-size:0.75rem; color:var(--success); font-weight:600;"><span style="width:8px; height:8px; background:var(--success); border-radius:50%; display:inline-block;"></span> Servidores Activos</span>
+            <!-- CARRUSEL SECUNDARIO MÓVIL EN HERO -->
+            <div class="scroll-reveal">
+                <div class="hero-preview-box">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                        <span style="font-size: 0.82rem; font-weight: 700; color: #94a3b8;">BStream Core Live Feed</span>
+                        <span style="font-size: 0.72rem; color: var(--success); font-weight: 700; background: rgba(0,230,118,0.1); padding: 3px 8px; border-radius: 6px;">Sincronizado TMDB</span>
                     </div>
-                    <div class="preview-carousel-viewport" id="heroLiveCarousel">
-                        <div class="carousel-slide active skeleton-load"></div>
+                    <div class="preview-viewport" id="heroLiveCarousel">
+                        <div class="hero-slide active skeleton-load"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="stats-bar-section">
+    <!-- BARRA DE ESTADÍSTICAS -->
+    <section class="stats-section">
         <div class="container stats-grid">
             <div class="stat-item">
                 <h3>99.9%</h3>
-                <p>Disponibilidad CDN</p>
+                <p>Estabilidad de Red</p>
             </div>
             <div class="stat-item">
                 <h3>4K / HDR</h3>
@@ -332,153 +396,126 @@
             </div>
             <div class="stat-item">
                 <h3>0 ms</h3>
-                <p>Latencia de Carga</p>
+                <p>Latencia de Carga UI</p>
             </div>
             <div class="stat-item">
                 <h3>v3.00</h3>
-                <p>Último Release</p>
+                <p>Compilación Oficial</p>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN DE FUNCIONES PRINCIPALES CON SERVIDORES TRANSPARENTES -->
+    <!-- CARACTERÍSTICAS TÉCNICAS Y SERVIDORES -->
     <section class="section-padding">
         <div class="container">
             <div class="section-header scroll-reveal">
-                <h2>Funciones Clave y Servidores de BStream v3.00</h2>
-                <p>Transparencia absoluta: conoce qué infraestructura de servidores alimenta cada apartado de nuestra aplicación.</p>
+                <h2>¿Qué contiene exactamente BStream v3.00?</h2>
+                <p>Transparencia total sobre los módulos internos de la aplicación y la infraestructura de servidores que alimenta cada sección.</p>
             </div>
 
-            <div class="features-detailed-grid">
-                <!-- Películas -->
-                <div class="feature-box scroll-reveal">
-                    <div class="feature-icon-wrapper"><span class="iconify" data-icon="material-symbols:movie-rounded"></span></div>
-                    <h3>Películas HD</h3>
-                    <div class="server-badge"><span class="iconify" data-icon="material-symbols:dns-rounded"></span> Servidores: Vimeo, Unlimplay, Streamwisht</div>
-                    <p>Acceso inmediato a estrenos mundiales de cartelera y clásicos del cine. Cada título se enlaza con múltiples opciones de reproducción para garantizar estabilidad y alta definición permanente.</p>
-                    <ul class="feature-tag-list">
-                        <li>Estrenos 4K</li>
-                        <li>Audio Dual</li>
-                        <li>Fichas TMDB</li>
-                    </ul>
+            <div class="features-grid">
+                <div class="feature-card scroll-reveal">
+                    <div class="feat-icon"><span class="iconify" data-icon="material-symbols:movie-rounded"></span></div>
+                    <h3>Películas HD y Estrenos</h3>
+                    <div class="server-tag-box"><span class="iconify" data-icon="material-symbols:dns-rounded"></span> Servidores: Vimeo, Unlimplay, Streamwisht</div>
+                    <p>Acceso a un catálogo masivo de películas con metadatos sincronizados mediante TMDB. Cada título incluye múltiples opciones de reproducción para máxima estabilidad sin cortes.</p>
                 </div>
 
-                <!-- Series -->
-                <div class="feature-box scroll-reveal">
-                    <div class="feature-icon-wrapper"><span class="iconify" data-icon="material-symbols:tv-rounded"></span></div>
-                    <h3>Series Completas</h3>
-                    <div class="server-badge"><span class="iconify" data-icon="material-symbols:dns-rounded"></span> Servidores: Unlimplay</div>
-                    <p>Un repositorio masivo de series de televisión organizadas por temporadas y episodios numerados, respaldadas por un motor de reproducción continuo y sin cortes molestos.</p>
-                    <ul class="feature-tag-list">
-                        <li>Temporadas al día</li>
-                        <li>Historial local</li>
-                        <li>Alta velocidad</li>
-                    </ul>
+                <div class="feature-card scroll-reveal">
+                    <div class="feat-icon"><span class="iconify" data-icon="material-symbols:tv-rounded"></span></div>
+                    <h3>Series por Temporadas</h3>
+                    <div class="server-tag-box"><span class="iconify" data-icon="material-symbols:dns-rounded"></span> Servidor: Unlimplay & Nodos Dedicados</div>
+                    <p>Organización impecable por temporadas y capítulos. Motor de reproducción optimizado con historial de visualización local y cambio rápido de servidores en caliente.</p>
                 </div>
 
-                <!-- Chat Integrado -->
-                <div class="feature-box scroll-reveal">
-                    <div class="feature-icon-wrapper"><span class="iconify" data-icon="material-symbols:chat-bubble-rounded"></span></div>
-                    <h3>Chat Integrado</h3>
-                    <div class="server-badge"><span class="iconify" data-icon="material-symbols:database-rounded"></span> Servidor: Firebase (Propio de BStream)</div>
-                    <p>Comunidad conectada en tiempo real mediante nuestra base de datos dedicada en Firebase, permitiendo soporte, interacción entre usuarios y peticiones directas de contenido.</p>
-                    <ul class="feature-tag-list">
-                        <li>Firebase Cloud</li>
-                        <li>Tiempo real</li>
-                        <li>Soporte directo</li>
-                    </ul>
-                </div>
-
-                <!-- TikTok Beta Adultos -->
-                <div class="feature-box scroll-reveal">
-                    <div class="feature-icon-wrapper" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);"><span class="iconify" data-icon="material-symbols:local-fire-department-rounded"></span></div>
-                    <h3>TikTok para Adultos <span class="badge-beta-pro">Beta</span></h3>
-                    <div class="server-badge" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); color: var(--warning);"><span class="iconify" data-icon="material-symbols:dns-rounded"></span> Servidores: Redes Externas / Nodos Beta</div>
-                    <p>Módulo experimental vertical exclusivo para mayores de edad. Alimentado por servidores de streaming vertical optimizados para una carga instantánea y navegación fluida mediante gestos.</p>
-                    <ul class="feature-tag-list">
-                        <li>Exclusivo +18</li>
-                        <li>Formato vertical</li>
-                        <li>Fase experimental</li>
-                    </ul>
+                <div class="feature-card scroll-reveal">
+                    <div class="feat-icon"><span class="iconify" data-icon="material-symbols:local-fire-department-rounded" style="color:var(--warning);"></span></div>
+                    <h3>TikTok para Adultos <span class="badge-beta">Beta</span></h3>
+                    <div class="server-tag-box" style="background: rgba(255,179,0,0.1); border-color: rgba(255,179,0,0.3); color: var(--warning);"><span class="iconify" data-icon="material-symbols:dns-rounded"></span> Nodos Especializados +18</div>
+                    <p>Módulo vertical experimental exclusivo para adultos integrado de forma opcional en la app, con carga instantánea y navegación por gestos táctiles fluidos.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NUEVO APARTADO: NOTICIAS Y ACTORES DESTACADOS (TMDB API) -->
+    <!-- ACTORES Y CELEBRIDADES DESTACADAS (GRILLA ESTRICTA 2, 3, 4, 5 COLUMNAS) -->
     <section class="section-padding" style="background: var(--bg-surface);">
         <div class="container">
             <div class="section-header scroll-reveal">
-                <h2>Noticias del Espectáculo y Actores del Momento</h2>
-                <p>Sincronización directa con la base de datos de TMDB: descubre qué actores dominan la industria esta semana.</p>
+                <h2>Actores y Celebridades de la Semana</h2>
+                <p>Artistas más populares indexados automáticamente mediante la API de TMDB.</p>
             </div>
-            <div class="news-actors-grid scroll-reveal" id="actorsGridContainer">
-                <div class="actor-card skeleton-load" style="height: 320px;"></div>
-                <div class="actor-card skeleton-load" style="height: 320px;"></div>
-                <div class="actor-card skeleton-load" style="height: 320px;"></div>
-                <div class="actor-card skeleton-load" style="height: 320px;"></div>
+
+            <div class="actors-responsive-grid scroll-reveal" id="actorsGridContainer">
+                <div class="actor-pro-card skeleton-load" style="height: 280px;"></div>
+                <div class="actor-pro-card skeleton-load" style="height: 280px;"></div>
+                <div class="actor-pro-card skeleton-load" style="height: 280px;"></div>
+                <div class="actor-pro-card skeleton-load" style="height: 280px;"></div>
+                <div class="actor-pro-card skeleton-load" style="height: 280px;"></div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN TECNOLOGÍA SANDBOX Y SERVIDORES -->
+    <!-- ARQUITECTURA SANDBOX Y RENDIMIENTO -->
     <section class="section-padding">
         <div class="container">
             <div class="section-header scroll-reveal">
-                <h2>Arquitectura de Red y Rendimiento</h2>
-                <p>Descubre por qué BStream ofrece una fluidez sin precedentes en dispositivos móviles.</p>
+                <h2>Seguridad, Publicidad y Rendimiento</h2>
+                <p>Ingeniería de software adaptada para brindar una experiencia libre de molestias.</p>
             </div>
 
-            <div class="sandbox-box scroll-reveal">
+            <div class="sandbox-showcase scroll-reveal">
                 <div>
-                    <div class="trust-pill" style="margin-bottom: 16px;">Exclusivo BStream v3.00</div>
-                    <h3>Mecánica de Seguridad Sandbox</h3>
-                    <p>Una de las innovaciones más potentes de BStream es su núcleo <strong>Sandbox</strong>. Esta tecnología de aislamiento de procesos intercepta y neutraliza automáticamente los scripts de publicidad invasiva, pop-ups y redirecciones maliciosas que suelen aparecer en los reproductores externos de video. Navega, reproduce y transmite sin interrupciones molestas.</p>
+                    <span style="color:var(--primary); font-weight:800; font-size:0.85rem; text-transform:uppercase; letter-spacing:1px;">Tecnología Exclusiva</span>
+                    <h3 style="font-size:1.8rem; font-weight:800; margin:8px 0 16px;">Núcleo Sandbox Anti-Publicidad</h3>
+                    <p style="color:#94a3b8; font-size:0.95rem;">Los reproductores externos de video suelen saturar al usuario con redirecciones molestas y pop-ups comerciales. El motor Sandbox de BStream encapsula los iframes y bloquea de manera nativa cualquier script intrusivo de los servidores de alojamiento.</p>
                 </div>
                 <div>
-                    <div class="trust-pill" style="margin-bottom: 16px; background: rgba(59, 130, 246, 0.1); color: #60a5fa; border-color: rgba(59, 130, 246, 0.25);">Infraestructura Global</div>
-                    <h3>Servidores de Alta Velocidad</h3>
-                    <p>Todo el contenido multimedia disponible en la plataforma es extraído y sincronizado de forma inteligente directamente desde los <strong>mejores servidores de internet</strong>. Esto garantiza un ancho de banda óptimo, tiempos de respuesta mínimos y una reproducción en streaming sin cortes ni buffering excesivo.</p>
+                    <span style="color:var(--success); font-weight:800; font-size:0.85rem; text-transform:uppercase; letter-spacing:1px;">Infraestructura Global</span>
+                    <h3 style="font-size:1.8rem; font-weight:800; margin:8px 0 16px;">Conexión Directa con CDN</h3>
+                    <p style="color:#94a3b8; font-size:0.95rem;">Sincronización automatizada con las redes de alojamiento más rápidas de internet. Disfruta de una latencia mínima al cambiar de servidor y una reproducción fluida en alta definición.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- GUÍA DE INSTALACIÓN -->
     <section class="section-padding" id="guide" style="background: var(--bg-surface);">
         <div class="container">
             <div class="section-header scroll-reveal">
-                <h2>Instalación en 3 Pasos Simples</h2>
-                <p>Configura tu entorno multimedia en cuestión de segundos de forma segura.</p>
+                <h2>Guía de Instalación en 3 Pasos</h2>
+                <p>Configura tu dispositivo Android en menos de un minuto.</p>
             </div>
-            
+
             <div class="timeline-grid">
-                <div class="timeline-card scroll-reveal">
-                    <div class="timeline-num">01</div>
-                    <div class="timeline-icon"><span class="iconify" data-icon="material-symbols:download-rounded"></span></div>
-                    <h4>Obtén el Paquete</h4>
-                    <p>Haz clic en el botón de descarga principal para bajar el ejecutable oficial optimizado (.apk) directamente a tu memoria.</p>
+                <div class="timeline-box scroll-reveal">
+                    <div class="step-number">01</div>
+                    <div class="step-icon"><span class="iconify" data-icon="material-symbols:download-rounded"></span></div>
+                    <h4>Descarga el APK</h4>
+                    <p>Haz clic en cualquiera de los botones de descarga de la página para obtener el archivo instalable oficial <strong>BStream.apk</strong>.</p>
                 </div>
-                <div class="timeline-card scroll-reveal">
-                    <div class="timeline-num">02</div>
-                    <div class="timeline-icon"><span class="iconify" data-icon="material-symbols:security-rounded"></span></div>
+                <div class="timeline-box scroll-reveal">
+                    <div class="step-number">02</div>
+                    <div class="step-icon"><span class="iconify" data-icon="material-symbols:security-rounded"></span></div>
                     <h4>Permite Orígenes</h4>
-                    <p>Si tu sistema lo solicita, ve a Ajustes y habilita temporalmente la instalación desde fuentes externas de confianza.</p>
+                    <p>Si tu sistema Android te lo solicita por seguridad, autoriza de forma temporal la instalación desde fuentes externas de confianza.</p>
                 </div>
-                <div class="timeline-card scroll-reveal">
-                    <div class="timeline-num">03</div>
-                    <div class="timeline-icon"><span class="iconify" data-icon="material-symbols:play-circle-rounded"></span></div>
-                    <h4>Disfruta el Contenido</h4>
-                    <p>Ejecuta el archivo instalado, explora el catálogo dinámico y comienza a reproducir tus series y películas favoritas.</p>
+                <div class="timeline-box scroll-reveal">
+                    <div class="step-number">03</div>
+                    <div class="step-icon"><span class="iconify" data-icon="material-symbols:play-circle-rounded"></span></div>
+                    <h4>Ejecuta y Disfruta</h4>
+                    <p>Abre la aplicación instalada, explora el catálogo dinámico y comienza a disfrutar del mejor entretenimiento multimedia.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- GALERÍA DE CONTENIDO TMDB -->
     <section class="section-padding">
         <div class="container">
             <div class="section-header scroll-reveal">
-                <h2>Catálogo Sincronizado en Vivo</h2>
-                <p>Una muestra pequeña del inmenso repertorio indexado automáticamente por el motor de BStream.</p>
+                <h2>Muestra del Catálogo Sincronizado</h2>
+                <p>Ejemplo de las fichas y metadatos que encontrarás disponibles dentro de la aplicación.</p>
             </div>
             <div class="preview-grid" id="previewGalleryGrid">
                 <div class="media-preview-card"><div class="media-thumb skeleton-load"></div></div>
@@ -488,90 +525,96 @@
         </div>
     </section>
 
-    <!-- POLÍTICAS, PRIVACIDAD Y COPYRIGHT -->
+    <!-- POLÍTICAS, PRIVACIDAD, COPYRIGHT Y PUBLICIDAD -->
     <section class="section-padding" style="background: var(--bg-surface);">
         <div class="container">
             <div class="section-header scroll-reveal">
-                <h2>Políticas de Uso, Privacidad y Copyright</h2>
-                <p>Transparencia absoluta sobre el manejo de información y normativas legales de la plataforma.</p>
+                <h2>Políticas de Privacidad, Uso, Publicidad y Copyright</h2>
+                <p>Transparencia absoluta sobre la operación y normativas legales de BStream v3.00.</p>
             </div>
 
-            <div class="legal-box scroll-reveal">
+            <div class="legal-container scroll-reveal">
                 <h3>1. Política de Privacidad y Protección de Datos</h3>
-                <p>En BStream valoramos y respetamos estrictamente tu privacidad digital. La aplicación está diseñada bajo el principio de mínimos privilegios: no recopilamos, almacenamos ni compartimos información personal sensible, libreta de contactos, geolocalización o registros de llamadas del usuario. Los datos guardados localmente (como historiales o preferencias de visualización) se alojan exclusivamente en el almacenamiento cifrado interno de tu dispositivo.</p>
+                <p>BStream respeta strictly tu privacidad digital. La aplicación no recopila ni almacena información personal sensible, libreta de contactos o registros de llamadas. Cualquier preferencia o historial se almacena de forma local y cifrada en el almacenamiento interno de tu dispositivo.</p>
 
-                <h3>2. Términos y Condiciones de Uso</h3>
-                <p>El acceso y uso de la aplicación implica la aceptación plena de nuestros términos operativos. BStream provee una interfaz de usuario fluida y optimizada orientada al entretenimiento multimedia. Queda estrictamente prohibido utilizar el software para la alteración de redes, ingeniería inversa malintencionada o violación de los protocolos de seguridad establecidos en los servidores de origen.</p>
+                <h3>2. Términos Operativos y de Uso</h3>
+                <p>La descarga y uso de la aplicación implica la aceptación de nuestros términos operativos. Queda prohibido el uso del software para vulnerar la integridad de redes externas o realizar ingeniería inversa malintencionada.</p>
 
-                <h3>3. Aviso de Copyright y Propiedad Intelectual</h3>
-                <p>BStream opera estrictamente como un motor automatizado de indexación de metadatos y enlaces de código abierto disponibles en la web pública. <strong>Ningún archivo de video, película o serie con derechos de autor es alojado, almacenado ni transmitido directamente en nuestros servidores centrales.</strong> Todo el material visual es extraído de manera automatizada de los mejores servidores públicos de internet (Vimeo, Unlimplay, Streamwisht, etc.). Si algún titular de derechos de autor considera que se vulneran normativas vigentes, puede ponerse en contacto con nuestro equipo de soporte técnico para el retiro inmediato de índices.</p>
+                <h3>3. Control y Manejo de Publicidad (Sandbox)</h3>
+                <p>Nuestra tecnología Sandbox interna opera para neutralizar la publicidad intrusiva y redirecciones que los servidores de terceros insertan de manera predeterminada en los reproductores de video, salvaguardando la experiencia del usuario.</p>
+
+                <h3>4. Aviso de Propiedad Intelectual y Copyright</h3>
+                <p>BStream opera estrictamente como un motor automatizado de indexación de metadatos y enlaces públicos disponibles en internet. <strong>Ningún archivo de video o película con derechos de autor es alojado ni transmitido en servidores propios.</strong> Todo el contenido proviene de servidores públicos externos (Vimeo, Unlimplay, Streamwisht, etc.).</p>
             </div>
         </div>
     </section>
 
+    <!-- COMUNIDAD OFICIAL -->
     <section class="section-padding">
         <div class="container">
             <div class="section-header scroll-reveal">
-                <h2>Canales Oficiales</h2>
-                <p>Mantente al tanto de los mantenimientos de servidores, novedades y soporte técnico.</p>
+                <h2>Canales Oficiales de Soporte</h2>
+                <p>Únete a nuestra comunidad para estar al tanto de actualizaciones y avisos de servidores.</p>
             </div>
-            
-            <div class="community-grid scroll-reveal">
-                <a href="https://t.me/nova_stream26" class="community-card" target="_blank">
-                    <div class="comm-icon tg"><span class="iconify" data-icon="bxl:telegram"></span></div>
+
+            <div class="community-flex scroll-reveal">
+                <a href="https://t.me/nova_stream26" class="comm-link-card" target="_blank">
+                    <div class="comm-logo tg"><span class="iconify" data-icon="bxl:telegram"></span></div>
                     <div>
-                        <h4 style="font-weight: 700; margin-bottom: 4px;">Canal de Telegram</h4>
-                        <p style="font-size: 0.85rem; color: #9ca3af;">Peticiones de contenido y avisos en vivo</p>
+                        <h4 style="font-weight: 800; margin-bottom: 4px;">Canal de Telegram</h4>
+                        <p style="font-size: 0.85rem; color: #94a3b8;">Avisos de mantenimiento y peticiones</p>
                     </div>
                 </a>
-                <a href="https://www.tiktok.com/@soy_oscar77?_r=1&_t=ZS-97YPVnKksgK" class="community-card" target="_blank">
-                    <div class="comm-icon tk"><span class="iconify" data-icon="bxl:tiktok"></span></div>
+                <a href="https://www.tiktok.com/@soy_oscar77?_r=1&_t=ZS-97YPVnKksgK" class="comm-link-card" target="_blank">
+                    <div class="comm-logo tk"><span class="iconify" data-icon="bxl:tiktok"></span></div>
                     <div>
-                        <h4 style="font-weight: 700; margin-bottom: 4px;">Comunidad TikTok</h4>
-                        <p style="font-size: 0.85rem; color: #9ca3af;">Tráilers y adelantos exclusivos</p>
+                        <h4 style="font-weight: 800; margin-bottom: 4px;">Comunidad TikTok</h4>
+                        <p style="font-size: 0.85rem; color: #94a3b8;">Adelantos y novedades de la app</p>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- PREGUNTAS FRECUENTES -->
     <section class="section-padding" style="background: var(--bg-surface);">
         <div class="container">
             <div class="section-header scroll-reveal">
                 <h2>Preguntas Frecuentes</h2>
-                <p>Respuestas técnicas transparentes sobre el funcionamiento de BStream.</p>
+                <p>Resolvemos tus dudas técnicas sobre BStream v3.00.</p>
             </div>
-            
-            <div class="faq-list scroll-reveal">
-                <div class="faq-card">
-                    <button class="faq-question">¿Cómo funciona exactamente la tecnología Sandbox en los reproductores?<span class="iconify faq-arrow" data-icon="material-symbols:keyboard-arrow-down-rounded"></span></button>
-                    <div class="faq-answer"><p>El motor Sandbox actúa como un filtro inteligente interno que encapsula el flujo de video y bloquea de forma nativa pop-ups de publicidad, banners flotantes y scripts maliciosos provenientes de servidores externos.</p></div>
+
+            <div class="faq-wrapper scroll-reveal">
+                <div class="faq-item">
+                    <button class="faq-question-btn">¿Cómo funciona la tecnología Sandbox en la app?<span class="iconify faq-chevron" data-icon="material-symbols:keyboard-arrow-down-rounded"></span></button>
+                    <div class="faq-content"><p>Actúa como un filtro inteligente que encapsula los reproductores incrustados, bloqueando de manera nativa banners publicitarios y pop-ups molestos de servidores externos.</p></div>
                 </div>
-                <div class="faq-card">
-                    <button class="faq-question">¿Por qué es necesario confirmar la mayoría de edad (+18)?<span class="iconify faq-arrow" data-icon="material-symbols:keyboard-arrow-down-rounded"></span></button>
-                    <div class="faq-answer"><p>Debido a la inclusión de nuestro módulo experimental TikTok para Adultos Beta y secciones de entretenimiento adulto, cumplimos con normativas de visualización segura para restringir el acceso a menores de edad.</p></div>
+                <div class="faq-item">
+                    <button class="faq-question-btn">¿Es compatible con Android TV o Smart TV?<span class="iconify faq-chevron" data-icon="material-symbols:keyboard-arrow-down-rounded"></span></button>
+                    <div class="faq-content"><p>Sí, la aplicación cuenta con un diseño adaptativo capaz de ejecutarse tanto en pantallas táctiles de smartphones como en sistemas Android TV.</p></div>
                 </div>
-                <div class="faq-card">
-                    <button class="faq-question">¿Funciona en dispositivos Smart TV o TV Box?<span class="iconify faq-arrow" data-icon="material-symbols:keyboard-arrow-down-rounded"></span></button>
-                    <div class="faq-answer"><p>Totalmente. Cuenta con soporte adaptativo tanto para interfaces táctiles en smartphones Android como para sistemas de televisión basados en Android TV.</p></div>
+                <div class="faq-item">
+                    <button class="faq-question-btn">¿Tiene algún costo de suscripción?<span class="iconify faq-chevron" data-icon="material-symbols:keyboard-arrow-down-rounded"></span></button>
+                    <div class="faq-content"><p>BStream es un proyecto de entretenimiento completamente gratuito y accesible para toda la comunidad Android.</p></div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- BARRA FIJA MÓVIL -->
     <div class="sticky-mobile-bar">
-        <button class="btn-sticky-download trigger-download-flow">
+        <button class="btn-sticky-dl trigger-download-flow">
             <span class="iconify" data-icon="material-symbols:download-rounded"></span>
-            Descargar BStream v3.00 (APK)
+            Descargar BStream APK v3.00
         </button>
     </div>
 
-    <!-- MODAL DE DESCARGA PRO -->
+    <!-- MODAL DE DESCARGA PRO CON PROGRESO -->
     <div class="download-modal-overlay" id="downloadModal">
         <div class="download-modal-card">
             <div class="dl-spinner"></div>
-            <div class="dl-modal-title" id="dlModalTitle">Conectando con CDN</div>
-            <div class="dl-modal-desc" id="dlModalDesc">Verificando integridad del paquete v3.00...</div>
+            <div style="font-size:1.35rem; font-weight:800; margin-bottom:8px;" id="dlModalTitle">Estableciendo Enlace CDN</div>
+            <div style="font-size:0.92rem; color:#94a3b8;" id="dlModalDesc">Preparando paquete de instalación BStream.apk...</div>
             <div class="dl-progress-bar">
                 <div class="dl-progress-fill" id="dlProgressFill"></div>
             </div>
@@ -581,70 +624,121 @@
     <footer>
         <div class="container">
             <p style="margin-bottom: 12px;">Soporte Técnico Oficial: <strong>xplaymovies2024@gmail.com</strong></p>
-            <p style="margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto; opacity: 0.6;">Aviso Legal: BStream v3.00 opera estrictamente como un motor automatizado de indexación de metadatos multimedia. El contenido mostrado es extraído de los mejores servidores de Internet (Vimeo, Unlimplay, Streamwisht). No alojamos ni transmitimos material con derechos de autor en nuestros servidores centrales.</p>
-            <p>&copy; 2026 BStream Corporation. Todos los derechos reservados.</p>
+            <p style="max-width: 800px; margin: 0 auto; opacity: 0.6;">Aviso Legal: BStream v3.00 opera strictly como un motor automatizado de indexación multimedia. El contenido visual es extraído de los mejores servidores de internet (Vimeo, Unlimplay, Streamwisht). No alojamos ni transmitimos material con derechos de autor en nuestros servidores centrales.</p>
+            <p style="margin-top:20px;">&copy; 2026 BStream Corporation. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <!-- SCRIPT DE LÓGICA DINÁMICA: TMDB + TRÁILER / PÓSTER ALEATORIO -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. MODAL EDAD +18
-            const ageModalOverlay = document.getElementById('ageModalOverlay');
-            const acceptAgeBtn = document.getElementById('acceptAgeBtn');
-
-            if (ageModalOverlay && acceptAgeBtn) {
-                acceptAgeBtn.addEventListener('click', () => {
-                    ageModalOverlay.style.opacity = '0';
-                    setTimeout(() => { ageModalOverlay.style.display = 'none'; }, 400);
-                });
-            }
-
             const API_KEY = 'b6083b855479a79fd9acdb0a2789f126';
             const BASE_URL = 'https://api.themoviedb.org/3';
-            const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w780';
-            const APK_DOWNLOAD_URL = 'https://www.mediafire.com/file/u8pk6cjnzxzq8f1/BStream.apk/file';
+            const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w1280';
+            const APK_URL = 'https://www.mediafire.com/file/u8pk6cjnzxzq8f1/BStream.apk/file';
 
-            const heroLiveCarousel = document.getElementById('heroLiveCarousel');
-            const previewGalleryGrid = document.getElementById('previewGalleryGrid');
-            const actorsGridContainer = document.getElementById('actorsGridContainer');
+            // 1. MODAL DE CONTROL DE EDAD
+            const ageModalOverlay = document.getElementById('ageModalOverlay');
+            document.getElementById('acceptAgeBtn').addEventListener('click', () => {
+                ageModalOverlay.style.opacity = '0';
+                setTimeout(() => { ageModalOverlay.style.display = 'none'; }, 400);
+            });
 
-            // 2. CARGA DINÁMICA TMDB (MEDIA + ACTORES)
-            async function fetchMediaData() {
+            // 2. LÓGICA DEL HERO: SELECCIÓN ALEATORIA DE TRÁILER VS PÓSTER
+            const heroBgContainer = document.getElementById('heroBgMedia');
+
+            async function setupHeroBackground() {
                 try {
-                    // Trending Movies/TV
-                    const response = await fetch(`${BASE_URL}/trending/all/week?api_key=${API_KEY}&language=es-MX`);
-                    if (!response.ok) throw new Error('Error al conectar con la API.');
-                    const data = await response.json();
-                    const items = data.results.filter(item => item.backdrop_path && (item.title || item.name));
+                    // Obtener películas en tendencia
+                    const res = await fetch(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=es-MX`);
+                    const data = await res.json();
+                    const movies = data.results.filter(m => m.backdrop_path);
 
-                    heroLiveCarousel.innerHTML = '';
-                    previewGalleryGrid.innerHTML = '';
+                    if (!movies || movies.length === 0) return;
 
-                    renderHeroCarousel(items.slice(0, 5));
-                    renderMediaGrid(items.slice(5, 11));
+                    // Seleccionar película aleatoria
+                    const randomMovie = movies[Math.floor(Math.random() * movies.length)];
+                    
+                    // Elección 50% / 50% entre intentar cargar Tráiler o Fondo
+                    const showTrailer = Math.random() < 0.5;
 
-                    // Trending People / Actors (Noticias / Actores)
-                    const peopleResponse = await fetch(`${BASE_URL}/trending/person/week?api_key=${API_KEY}&language=es-MX`);
-                    const peopleData = await peopleResponse.json();
-                    renderActorsGrid(peopleData.results.slice(0, 4));
+                    let trailerKey = null;
+
+                    if (showTrailer) {
+                        // Intentar buscar tráiler en español primero
+                        let videoRes = await fetch(`${BASE_URL}/movie/${randomMovie.id}/videos?api_key=${API_KEY}&language=es-MX`);
+                        let videoData = await videoRes.json();
+                        let trailerObj = videoData.results ? videoData.results.find(v => v.type === 'Trailer' && v.site === 'YouTube') : null;
+
+                        // Si no hay tráiler en español, buscar sin restricción estricta de idioma
+                        if (!trailerObj) {
+                            videoRes = await fetch(`${BASE_URL}/movie/${randomMovie.id}/videos?api_key=${API_KEY}`);
+                            videoData = await videoRes.json();
+                            trailerObj = videoData.results ? videoData.results.find(v => v.type === 'Trailer' && v.site === 'YouTube') : null;
+                        }
+
+                        if (trailerObj) {
+                            trailerKey = trailerObj.key;
+                        }
+                    }
+
+                    // Renderizar resultado en el Hero Background
+                    if (trailerKey) {
+                        heroBgContainer.innerHTML = `
+                            <iframe 
+                                src="https://www.youtube.com/embed/${trailerKey}?autoplay=1&mute=1&controls=0&loop=1&playlist=${trailerKey}&showinfo=0&rel=0&iv_load_policy=3&enablejsapi=1" 
+                                allow="autoplay; encrypted-media" 
+                                title="Background Trailer">
+                            </iframe>
+                        `;
+                    } else {
+                        // Renderizar Póster HD con animación Ken Burns
+                        heroBgContainer.innerHTML = `
+                            <div class="hero-bg-image" style="background-image: url('${IMAGE_BASE_URL}${randomMovie.backdrop_path}');"></div>
+                        `;
+                    }
 
                 } catch (err) {
-                    console.error(err);
-                    previewGalleryGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #6b7280;">Catálogo sincronizado en tiempo real dentro de la aplicación.</p>`;
-                    actorsGridContainer.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #6b7280;">Sección de actores sincronizada vía API TMDB.</p>`;
+                    console.error("Error al cargar background del hero:", err);
+                }
+            }
+
+            // 3. FETCH TMDB PARA EL RESTO DE SECCIONES
+            const heroLiveCarousel = document.getElementById('heroLiveCarousel');
+            const actorsGridContainer = document.getElementById('actorsGridContainer');
+            const previewGalleryGrid = document.getElementById('previewGalleryGrid');
+
+            async function initStudioData() {
+                try {
+                    // Contenido multimedia general
+                    const resMedia = await fetch(`${BASE_URL}/trending/all/week?api_key=${API_KEY}&language=es-MX`);
+                    const dataMedia = await resMedia.json();
+                    const items = dataMedia.results.filter(i => i.backdrop_path && (i.title || i.name));
+
+                    renderHeroCarousel(items.slice(0, 5));
+                    renderMediaGrid(items.slice(5, 8));
+
+                    // Actores tendencias (Grilla de 2 a 5 columnas)
+                    const resActors = await fetch(`${BASE_URL}/trending/person/week?api_key=${API_KEY}&language=es-MX`);
+                    const dataActors = await resActors.json();
+                    renderActorsGrid(dataActors.results.slice(0, 10));
+
+                } catch (e) {
+                    console.error("Error cargando datos suplementarios:", e);
                 }
             }
 
             function renderHeroCarousel(movies) {
+                heroLiveCarousel.innerHTML = '';
                 movies.forEach((movie, index) => {
                     const title = movie.title || movie.name;
-                    const tag = movie.media_type === 'tv' ? 'Serie en Emisión' : 'Estreno Mundial';
+                    const tag = movie.media_type === 'tv' ? 'Serie Popular' : 'Estreno Mundial';
                     const activeClass = index === 0 ? 'active' : '';
 
                     const slide = document.createElement('div');
-                    slide.className = `carousel-slide ${activeClass}`;
+                    slide.className = `hero-slide ${activeClass}`;
                     slide.style.backgroundImage = `url('${IMAGE_BASE_URL}${movie.backdrop_path}')`;
-                    slide.innerHTML = `<div class="carousel-meta"><span>${tag}</span><h4>${title}</h4></div>`;
+                    slide.innerHTML = `<div class="slide-info"><span>${tag}</span><h4>${title}</h4></div>`;
                     heroLiveCarousel.appendChild(slide);
                 });
                 startCarouselTimer();
@@ -653,7 +747,7 @@
             function startCarouselTimer() {
                 let idx = 0;
                 setInterval(() => {
-                    const slides = document.querySelectorAll('.carousel-slide');
+                    const slides = document.querySelectorAll('.hero-slide');
                     if (slides.length === 0) return;
                     slides[idx].classList.remove('active');
                     idx = (idx + 1) % slides.length;
@@ -661,39 +755,45 @@
                 }, 4500);
             }
 
+            function renderActorsGrid(actors) {
+                actorsGridContainer.innerHTML = '';
+                actors.forEach(actor => {
+                    if (!actor.profile_path) return;
+                    const photo = `${IMAGE_BASE_URL}${actor.profile_path}`;
+                    const knownFor = actor.known_for && actor.known_for[0] ? (actor.known_for[0].title || actor.known_for[0].name) : 'Cine Mundial';
+
+                    const card = document.createElement('div');
+                    card.className = 'actor-pro-card';
+                    card.innerHTML = `
+                        <div class="actor-photo" style="background-image: url('${photo}')"></div>
+                        <div class="actor-name">${actor.name}</div>
+                        <div class="actor-known">${knownFor}</div>
+                    `;
+                    actorsGridContainer.appendChild(card);
+                });
+            }
+
             function renderMediaGrid(items) {
+                previewGalleryGrid.innerHTML = '';
                 items.forEach(item => {
                     const title = item.title || item.name;
-                    const overview = item.overview || 'Accede a la ficha técnica completa y reproducción en alta definición instalando BStream.';
+                    const overview = item.overview || 'Ficha técnica y metadatos sincronizados mediante BStream Core.';
+
                     const card = document.createElement('div');
                     card.className = 'media-preview-card';
                     card.innerHTML = `
-                        <div class="media-thumb" style="background-image: url('${IMAGE_BASE_URL}${item.backdrop_path}')"><div class="media-tag">BSTREAM HD</div></div>
+                        <div class="media-thumb" style="background-image: url('${IMAGE_BASE_URL}${item.backdrop_path}')"><div class="media-tag">4K ULTRA HD</div></div>
                         <div class="media-info"><h4>${title}</h4><p>${overview}</p></div>
                     `;
                     previewGalleryGrid.appendChild(card);
                 });
             }
 
-            function renderActorsGrid(actors) {
-                actorsGridContainer.innerHTML = '';
-                actors.forEach(actor => {
-                    const profileImg = actor.profile_path ? `${IMAGE_BASE_URL}${actor.profile_path}` : 'https://via.placeholder.com/300x450?text=No+Image';
-                    const knownFor = actor.known_for && actor.known_for[0] ? (actor.known_for[0].title || actor.known_for[0].name) : 'Estrella de Cine';
-                    const card = document.createElement('div');
-                    card.className = 'actor-card';
-                    card.innerHTML = `
-                        <div class="actor-img" style="background-image: url('${profileImg}')"></div>
-                        <h4>${actor.name}</h4>
-                        <p>Destacado en: ${knownFor}</p>
-                    `;
-                    actorsGridContainer.appendChild(card);
-                });
-            }
+            // Inicializar llamadas a la API de TMDB
+            setupHeroBackground();
+            initStudioData();
 
-            fetchMediaData();
-
-            // 3. DESCARGA PRO
+            // 4. FLUJO DE DESCARGA CON MODAL Y BARRAS DE PROGRESO
             const downloadModal = document.getElementById('downloadModal');
             const dlModalTitle = document.getElementById('dlModalTitle');
             const dlModalDesc = document.getElementById('dlModalDesc');
@@ -705,51 +805,51 @@
                     e.preventDefault();
                     downloadModal.classList.add('active');
                     dlProgressFill.style.width = '0%';
-                    
+
                     setTimeout(() => {
-                        dlModalTitle.textContent = "Estableciendo Enlace Seguro";
-                        dlModalDesc.textContent = "Conectando al servidor CDN principal...";
-                        dlProgressFill.style.width = '45%';
-                    }, 700);
+                        dlModalTitle.textContent = "Verificando Paquete";
+                        dlModalDesc.textContent = "Comprobando firma de seguridad de BStream.apk...";
+                        dlProgressFill.style.width = '50%';
+                    }, 800);
 
                     setTimeout(() => {
                         dlModalTitle.textContent = "¡Listo para Descargar!";
-                        dlModalDesc.textContent = "Iniciando descarga del paquete v3.00...";
+                        dlModalDesc.textContent = "Iniciando descarga en tu dispositivo...";
                         dlProgressFill.style.width = '100%';
-                    }, 1700);
+                    }, 1800);
 
                     setTimeout(() => {
                         downloadModal.classList.remove('active');
-                        window.location.href = APK_DOWNLOAD_URL;
-                    }, 2400);
+                        window.location.href = APK_URL;
+                    }, 2500);
                 });
             });
 
-            // 4. FAQ ACORDEÓN
-            const faqCards = document.querySelectorAll('.faq-card');
-            faqCards.forEach(card => {
-                const btn = card.querySelector('.faq-question');
-                const answer = card.querySelector('.faq-answer');
-                
+            // 5. FAQ ACORDEÓN
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const btn = item.querySelector('.faq-question-btn');
+                const content = item.querySelector('.faq-content');
+
                 btn.addEventListener('click', () => {
-                    const isOpen = card.classList.contains('open');
-                    faqCards.forEach(c => {
-                        c.classList.remove('open');
-                        c.querySelector('.faq-answer').style.maxHeight = '0';
+                    const isOpen = item.classList.contains('open');
+                    faqItems.forEach(i => {
+                        i.classList.remove('open');
+                        i.querySelector('.faq-content').style.maxHeight = '0';
                     });
-                    
+
                     if (!isOpen) {
-                        card.classList.add('open');
-                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        item.classList.add('open');
+                        content.style.maxHeight = content.scrollHeight + 'px';
                     }
                 });
             });
 
-            // 5. SCROLL REVEAL
+            // 6. SCROLL REVEAL ANIMATIONS
             const reveals = document.querySelectorAll('.scroll-reveal');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-            }, { threshold: 0.05 });
+            }, { threshold: 0.1 });
             reveals.forEach(el => observer.observe(el));
         });
     </script>
